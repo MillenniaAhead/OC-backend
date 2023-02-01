@@ -8,4 +8,13 @@ router.use("/", groupsRouter);
 const usersRouter = require("./users");
 router.use("/", usersRouter);
 
+// reason router
+const reasonRouter = require("./SettingClients/Reason");
+router.use("/", reasonRouter);
+
+// sources router
+const sourcesRouter = require("./SettingClients/Sources");
+router.use("/", sourcesRouter);
+
+
 module.exports = router;
