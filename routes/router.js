@@ -60,4 +60,12 @@ router.use("/", VoucherSoldRouter);
 const MembershipSoldRouter = require("./NewSale/MembershipSold");
 router.use("/", MembershipSoldRouter);
 
+// Login router
+const LoginRouter = require("./Login/Login");
+router.use("/", LoginRouter);
+
+// Register router
+const RegisterRouter = require("./Register/Register");
+router.use("/", RegisterRouter);
+
 module.exports = router;
