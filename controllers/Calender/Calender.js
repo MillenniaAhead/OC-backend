@@ -4,11 +4,13 @@ const calenderController = {
   create: async (req, res) => {
     try {
       const calender = {
-        discription: req.body.discription
+        name: req.body.name,
       };
 
       const response = await CalenderModel.create(calender);
-      res.status(200).json({ response, msg: "discription created successfully" });
+      res
+        .status(200)
+        .json({ response, msg: "discription created successfully" });
     } catch (error) {
       console.log(error);
     }
@@ -36,7 +38,9 @@ const calenderController = {
       const Calender = await CalenderModel.findByIdAndDelete(req.params.id);
       if (!Calender)
         return res.status(404).json({ msg: "discription not found" });
-      res.status(200).json({ Calender, msg: "discription deleted with success!" });
+      res
+        .status(200)
+        .json({ Calender, msg: "discription deleted with success!" });
     } catch (error) {
       console.log(error);
     }
@@ -44,7 +48,7 @@ const calenderController = {
   update: async (req, res) => {
     try {
       const Calender = {
-        discription: req.body.discription
+        name: req.body.name,
       };
       const updatedcalender = await CalenderModel.findByIdAndUpdate(
         req.params.id,
@@ -52,7 +56,9 @@ const calenderController = {
       );
       if (!updatedcalender)
         return res.status(404).json({ msg: "discription not found" });
-      res.status(200).json({ Calender, msg: "discription updated successfully!" });
+      res
+        .status(200)
+        .json({ Calender, msg: "discription updated successfully!" });
     } catch (error) {
       console.log(error);
     }

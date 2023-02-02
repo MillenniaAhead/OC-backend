@@ -1,15 +1,15 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const CalenderSchema = new Schema({
+const SalesHistorySchema = new Schema({
   name: {
     type: String,
     require: true,
   },
 });
 
-const Calender = mongoose.model("Calender", CalenderSchema);
+const SalesHistory = mongoose.model("SalesHistory", SalesHistorySchema);
 
 module.exports = {
-  Calender,
+  SalesHistory,
 };

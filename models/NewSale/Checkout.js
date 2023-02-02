@@ -1,15 +1,15 @@
 const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
-const CalenderSchema = new Schema({
+const CheckoutSchema = new Schema({
   name: {
     type: String,
     require: true,
   },
 });
 
-const Calender = mongoose.model("Calender", CalenderSchema);
+const Checkout = mongoose.model("Checkout", CheckoutSchema);
 
 module.exports = {
-  Calender,
+  Checkout,
 };
