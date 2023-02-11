@@ -3,30 +3,14 @@ const { Schema } = mongoose;
 
 const commissionSchema = new Schema(
   {
-    effective_date:{
-        type:Date
-    },
-    commission_cycle:{
-        type:String
-    },
-    service_commission:{
-        type:String
-    },
-    product_commission:{
-        type:String
-    },
-    voucher_commission:{
-        type:String
-    },
-    membership_commission:{
-        type:String
+    commission:{
+        type:Array
     }
   }
-)
+);
 
 const Commission = mongoose.model("Commissions", commissionSchema);
 
 module.exports = {
-    Commission,
-    commissionSchema
+    Commission
 };

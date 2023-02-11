@@ -22,13 +22,18 @@ const NewAppointmentSchema = new Schema({
         type:String,
         require:true
     },
+    appointment_note:{
+        type:String,
+    },
     tip:{
         type:String
     },
     payment:{
         type:String
     }
-})
+},
+ { timestamps: true } // save date info
+);
 
 const NewAppointment = mongoose.model("NewAppointments", NewAppointmentSchema);
 

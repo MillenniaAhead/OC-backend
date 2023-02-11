@@ -28,10 +28,6 @@ router.use("/", commissionsRouter);
 const permissionsRouter = require("./anu-team/permission");
 router.use("/", permissionsRouter);
 
-// // Under anu-team under pemission booking & client router
-// const bookingAndclientRouter = require("./anu-team/permission/bookingAndClient");
-// router.use("/", bookingAndclientRouter);
-
 // Under anu-team Opening hours router
 const openingHoursRouter = require("./anu-team/openingHour");
 router.use("/", openingHoursRouter);

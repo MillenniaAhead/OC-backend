@@ -28,30 +28,34 @@ const dealSchema = new Schema({
         type:Array
     },
     start_date:{
-        type:String,
+        type:Date,
         require:true
     },
     end_date:{
-        type:String,
+        type:Date,
         require:true
     },
     promotion_value:{
         type:String,
         require:true
     },
-    max_use_limit:{
+    promotion_value_type:{
         type:String,
+        require:true
+    },
+    max_use_limit:{
+        type:Number,
         require:true
     },
     min_purchase_amount:{
-        type:String,
+        type:Number,
         require:true
     },
     promotion1:{
-        type:String
+        type:Boolean
     },
     promotion2:{
-        type:String
+        type:Boolean
     },
     discount_code:{
         type:String

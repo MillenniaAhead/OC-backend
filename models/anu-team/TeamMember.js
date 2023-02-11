@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
-const { commissionSchema} = require('./Commission')
+const { commissionSchema} = require('./team-member/Commission')
 
 const TeamMemberSchema = new Schema({
     profile_image:{
