@@ -3,11 +3,7 @@ const { Appointments: AppointmentsModel } = require("../../models/NewSale/Appoin
 const AppointmentsController = {
   create: async (req, res) => {
     try {
-      const appointments = {
-        name: req.body.name,
-      };
-
-      const response = await AppointmentsModel.create(appointments);
+      const response = await AppointmentsModel.create(req.body);
       res.status(200).json({ response, msg: "name created successfully" });
     } catch (error) {
       console.log(error);

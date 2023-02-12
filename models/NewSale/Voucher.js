@@ -6,6 +6,18 @@ const VoucherSchema = new Schema({
     type: String,
     require: true,
   },
+  price: {
+    type: Number,
+    require: true,
+  },
+  retailPrice: {
+    type: Number,
+    require: true,
+  },
+  voucherName: {
+    type: String,
+    require: true,
+  },
 });
 
 const Voucher = mongoose.model("Voucher", VoucherSchema);

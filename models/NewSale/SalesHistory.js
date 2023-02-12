@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const SalesHistorySchema = new Schema({
-  name: {
+  search: {
     type: String,
     require: true,
   },

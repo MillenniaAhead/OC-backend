@@ -3,11 +3,7 @@ const { SalesHistory : SalesHistoryModel } = require("../../models/NewSale/Sales
 const SalesHistoryController = {
   create: async (req, res) => {
     try {
-      const saleshistory = {
-        name: req.body.name,
-      };
-
-      const response = await SalesHistoryModel.create(saleshistory);
+      const response = await SalesHistoryModel.create(req.body);
       res.status(200).json({ response, msg: "name created successfully" });
     } catch (error) {
       console.log(error);

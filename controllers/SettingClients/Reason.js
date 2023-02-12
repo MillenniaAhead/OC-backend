@@ -3,11 +3,7 @@ const { Reason: ReasonModel } = require("../../models/SettingClients/Reason");
 const reasonController = {
   create: async (req, res) => {
     try {
-      const reason = {
-        name: req.body.name
-      };
-
-      const response = await ReasonModel.create(reason);
+      const response = await ReasonModel.create(req.body);
       res.status(200).json({ response, msg: "Reason created successfully" });
     } catch (error) {
       console.log(error);

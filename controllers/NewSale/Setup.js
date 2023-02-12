@@ -3,11 +3,7 @@ const { Setup: SetupModel } = require("../../models/NewSale/Setup");
 const setupController = {
   create: async (req, res) => {
     try {
-      const setup = {
-        name: req.body.name,
-      };
-
-      const response = await SetupModel.create(setup);
+      const response = await SetupModel.create(req.body);
       res.status(200).json({ response, msg: "name created successfully" });
     } catch (error) {
       console.log(error);

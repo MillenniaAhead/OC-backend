@@ -3,12 +3,7 @@ const { CreateVoucher: CreateVoucherModel } = require("../../models/NewSale/Crea
 const CreateVoucherController = {
   create: async (req, res) => {
     try {
-      const createvoucher = {
-        name: req.body.name,
-        price: req.body.price,
-      };
-
-      const response = await CreateVoucherModel.create(createvoucher);
+      const response = await CreateVoucherModel.create(req.body);
       res.status(200).json({ response, msg: "Voucher created successfully" });
     } catch (error) {
       console.log(error);

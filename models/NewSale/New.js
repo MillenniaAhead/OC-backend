@@ -6,7 +6,51 @@ const NewProductsSchema = new Schema({
     type: String,
     require: true,
   },
-  price: {
+  code: {
+    type: String,
+    require: true,
+  },
+  ammount: {
+    type: Number,
+    require: true,
+  },
+  shortDescription: {
+    type: String,
+    require: true,
+  },
+  productDescription: {
+    type: String,
+    require: true,
+  }, 
+  supplyPrice: {
+    type: Number,
+    require: true,
+  },
+  retailPrice: {
+    type: Number,
+    require: true,
+  },
+  specialPrice: {
+    type: Number,
+    require: true,
+  },
+  markup: {
+    type: Number,
+    require: true,
+  },
+  sku: {
+    type: String,
+    require: true,
+  },
+  stockQuantity: {
+    type: Number,
+    require: true,
+  },
+  lowstocklevel: {
+    type: Number,
+    require: true,
+  },
+  reorderQuantity: {
     type: Number,
     require: true,
   },

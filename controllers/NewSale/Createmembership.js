@@ -3,12 +3,7 @@ const { CreateMembership: CreateMembershipModel } = require("../../models/NewSal
 const CreateMembershipController = {
   create: async (req, res) => {
     try {
-      const createmembership = {
-        name: req.body.name,
-        price: req.body.price,
-      };
-
-      const response = await CreateMembershipModel.create(createmembership);
+      const response = await CreateMembershipModel.create(req.body);
       res.status(200).json({ response, msg: "Membership created successfully" });
     } catch (error) {
       console.log(error);

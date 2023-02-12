@@ -2,7 +2,11 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 const AppointmentsSchema = new Schema({
-  name: {
+  member: {
+    type: String,
+    require: true,
+  },
+  channel: {
     type: String,
     require: true,
   },

@@ -4,7 +4,7 @@ const RegisterController = {
   create: async (req, res) => {
     try {
       const register = {
-        name: req.body.name,
+        username: req.body.username,
         email: req.body.email,
         password: req.body.password,
         mobilenumber: req.body.mobilenumber,
@@ -52,7 +52,7 @@ const RegisterController = {
   update: async (req, res) => {
     try {
       const Register = {
-        name: req.body.name,
+        username: req.body.username,
         email: req.body.email,
         password: req.body.password,
         mobilenumber: req.body.mobilenumber,

@@ -3,11 +3,7 @@ const { MembershipSold: MembershipSoldModel } = require("../../models/NewSale/Me
 const MembershipSoldController = {
   create: async (req, res) => {
     try {
-      const membershipsold = {
-        name: req.body.name,
-      };
-
-      const response = await MembershipSoldModel.create(membershipsold);
+      const response = await MembershipSoldModel.create(req.body);
       res.status(200).json({ response, msg: "name created successfully" });
     } catch (error) {
       console.log(error);

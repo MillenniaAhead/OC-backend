@@ -3,11 +3,7 @@ const { VoucherSold: VoucherSoldModel } = require("../../models/NewSale/VoucherS
 const VoucherSoldController = {
   create: async (req, res) => {
     try {
-      const vouchersold = {
-        name: req.body.name,
-      };
-
-      const response = await VoucherSoldModel.create(vouchersold);
+      const response = await VoucherSoldModel.create(req.body);
       res.status(200).json({ response, msg: "name created successfully" });
     } catch (error) {
       console.log(error);

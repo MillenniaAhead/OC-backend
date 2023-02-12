@@ -3,12 +3,7 @@ const { NewProducts: NewProductsModel } = require("../../models/NewSale/New");
 const NewProductsController = {
   create: async (req, res) => {
     try {
-      const newproducts = {
-        name: req.body.name,
-        price: req.body.price,
-      };
-
-      const response = await NewProductsModel.create(newproducts);
+      const response = await NewProductsModel.create(req.body);
       res.status(200).json({ response, msg: "Product created successfully" });
     } catch (error) {
       console.log(error);

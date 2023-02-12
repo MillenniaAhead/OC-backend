@@ -6,6 +6,14 @@ const ReasonSchema = new Schema({
     type: String,
     require: true,
   },
+  name2: {
+    type: String,
+    require: true,
+  },
+  name3: {
+    type: String,
+    require: true,
+  },
 });
 
 const Reason = mongoose.model("Reason", ReasonSchema);

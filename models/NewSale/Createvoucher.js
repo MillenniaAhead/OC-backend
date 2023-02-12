@@ -6,8 +6,16 @@ const CreateVoucherSchema = new Schema({
     type: String,
     require: true,
   },
-  price: {
+  value: {
     type: Number,
+    require: true,
+  },
+  retailPrice: {
+    type: Number,
+    require: true,
+  },
+  search: {
+    type: String,
     require: true,
   },
 });
