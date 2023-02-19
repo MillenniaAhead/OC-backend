@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 
-const SanSetSalesSchema = new Schema(
+const InvoiceSchema = new Schema(
   {
     invoiceTitle: {
       type: String,
@@ -21,16 +21,12 @@ const SanSetSalesSchema = new Schema(
     reciptFooter: {
       type: String,
       require:true,
-    },
-    
-   
-    
-  },
-  { timestamps: true } // save date info
+    }
+  }
 );
 
-const SanSetSales = mongoose.model("SanSetSales", SanSetSalesSchema);
+const Invoice = mongoose.model("Invoice", InvoiceSchema);
 
 module.exports = {
-    SanSetSales,
+    Invoice,
 };

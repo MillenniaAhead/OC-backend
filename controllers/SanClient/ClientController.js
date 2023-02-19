@@ -1,9 +1,9 @@
-const { SCUClient: SCUClientModal } = require("../models/SCUClientModal");
+const { Client: ClientModal } = require("../../models/SanClient/ClientModal");
 
-const SanClientController = {
+const ClientController = {
   create: async (req, res) => {
     try {
-      const SanClient = {
+      const Client = {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         phone: req.body.phone,
@@ -17,7 +17,7 @@ const SanClientController = {
        
       };
 
-      const response = await SCUClientModal.create(SanClient);
+      const response = await ClientModal.create(Client);
       res.status(200).json({ response, msg: "created successfully" });
     } catch (error) {
       console.log(error);
@@ -25,35 +25,35 @@ const SanClientController = {
   },
   getAll: async (req, res) => {
     try {
-      const SanClients = await SCUClientModal.find();
-      res.json(SanClients);
+      const Clients = await ClientModal.find();
+      res.json(Clients);
     } catch (error) {
       console.log(error);
     }
   },
   getById: async (req, res) => {
     try {
-      const SanClients = await SCUClientModal.findById(req.params.id);
-      if (!SanClients)
-        return res.status(404).json({ msg: "SanClient not found" });
-      res.json(SanClients);
+      const Clients = await ClientModal.findById(req.params.id);
+      if (!Clients)
+        return res.status(404).json({ msg: "Client not found" });
+      res.json(Clients);
     } catch (error) {
       console.log(error);
     }
   },
   deleteById: async (req, res) => {
     try {
-      const SanClients = await SCUClientModal.findByIdAndDelete(req.params.id);
-      if (!SanClients)
-        return res.status(404).json({ msg: "SanClient not found" });
-      res.status(200).json({ SanClients, msg: "SanClient deleted with success!" });
+      const Clients = await ClientModal.findByIdAndDelete(req.params.id);
+      if (!Clients)
+        return res.status(404).json({ msg: "Client not found" });
+      res.status(200).json({ Clients, msg: "Client deleted with success!" });
     } catch (error) {
       console.log(error);
     }
   },
   update: async (req, res) => {
     try {
-      const SanClient = {
+      const Client = {
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         phone: req.body.phone,
@@ -66,17 +66,17 @@ const SanClientController = {
         language: req.body.language,
         
       };
-      const updatedSanClient = await SCUClientModal.findByIdAndUpdate(
+      const updatedClient = await ClientModal.findByIdAndUpdate(
         req.params.id,
-        SanClient
+        Client
       );
-      if (!updatedSanClient)
-        return res.status(404).json({ msg: "SanClient not found" });
-      res.status(200).json({ SanClient, msg: "SanClient updated successfully!" });
+      if (!updatedClient)
+        return res.status(404).json({ msg: "Client not found" });
+      res.status(200).json({ Client, msg: "Client updated successfully!" });
     } catch (error) {
       console.log(error);
     }
   },
 };
 
-module.exports = SanClientController;
+module.exports = ClientController;
