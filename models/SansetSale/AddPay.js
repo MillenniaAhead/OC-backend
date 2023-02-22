@@ -2,9 +2,9 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 
-const SSSAddPaySchema = new Schema(
+const AddPaySchema = new Schema(
   {
-    payName: {
+    payment: {
       type: Number,
       require: true,
     },
@@ -13,8 +13,8 @@ const SSSAddPaySchema = new Schema(
   
 );
 
-const SSSAddPay = mongoose.model("SSSAddPays", SSSAddPaySchema);
+const AddPay = mongoose.model("AddPays", AddPaySchema);
 
 module.exports = {
-    SSSAddPay,
+    AddPay,
 };

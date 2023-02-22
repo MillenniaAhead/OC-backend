@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 
-const SSSTaxSchema = new Schema(
+const TaxSchema = new Schema(
   {
     newTax: {
       type: Number,
@@ -21,8 +21,8 @@ const SSSTaxSchema = new Schema(
   
 );
 
-const SSSTaxs = mongoose.model("SSSTaxs", SSSTaxSchema);
+const Taxs = mongoose.model("Taxs", TaxSchema);
 
 module.exports = {
-    SSSTaxs,
+    Taxs,
 };

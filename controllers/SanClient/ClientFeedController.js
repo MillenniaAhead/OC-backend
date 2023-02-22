@@ -1,4 +1,4 @@
-const { SCUClientFeed : SCUClientFeed } = require("../models/SCUClientFeed");
+const { ClientFeed : ClientFeed } = require("../../models/SanClient/ClientFeed");
 
 const SCClientFeedController = {
   create: async (req, res) => {
@@ -7,7 +7,7 @@ const SCClientFeedController = {
         payName: req.body.payName
       };
 
-      const response = await SCUClientFeed.create(clientFeed);
+      const response = await ClientFeed.create(clientFeed);
       res.status(200).json({ response, msg: "created successfully" });
     } catch (error) {
       console.log(error);
@@ -15,7 +15,7 @@ const SCClientFeedController = {
   },
   getAll: async (req, res) => {
     try {
-      const clientFeeds = await SCUClientFeed.find();
+      const clientFeeds = await ClientFeed.find();
       res.json(clientFeeds);
     } catch (error) {
       console.log(error);
@@ -23,7 +23,7 @@ const SCClientFeedController = {
   },
   getById: async (req, res) => {
     try {
-      const clientFeeds = await SCUClientFeed.findById(req.params.id);
+      const clientFeeds = await ClientFeed.findById(req.params.id);
       if (!clientFeeds)
         return res.status(404).json({ msg: "clientFeed not found" });
       res.json(clientFeeds);
@@ -33,7 +33,7 @@ const SCClientFeedController = {
   },
   deleteById: async (req, res) => {
     try {
-      const clientFeeds = await SCUClientFeed.findByIdAndDelete(req.params.id);
+      const clientFeeds = await ClientFeed.findByIdAndDelete(req.params.id);
       if (!clientFeeds)
         return res.status(404).json({ msg: "clientFeed not found" });
       res.status(200).json({ clientFeeds, msg: "clientFeed deleted with success!" });
@@ -46,7 +46,7 @@ const SCClientFeedController = {
       const clientFeed = {
         payName: req.body.payName
       };
-      const updatedAddPay = await SCUClientFeed.findByIdAndUpdate(
+      const updatedAddPay = await ClientFeed.findByIdAndUpdate(
         req.params.id,
         clientFeed
       );

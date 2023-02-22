@@ -1,13 +1,13 @@
-const { SSSOther : SSSOtherModel } = require("../models/SSSOtherModel");
+const { Other : OtherModel } = require("../../models/SansetSale/Other");
 
-const SSSOtherController = {
+const OtherController = {
   create: async (req, res) => {
     try {
       const Other = {
         other: req.body.other,
       };
 
-      const response = await SSSOtherModel.create(Other);
+      const response = await OtherModel.create(Other);
       res.status(200).json({ response, msg: "created successfully", Other });
     } catch (error) {
       console.log(error);
@@ -15,7 +15,7 @@ const SSSOtherController = {
   },
   getAll: async (req, res) => {
     try {
-      const Others = await SSSOtherModel.find();
+      const Others = await OtherModel.find();
       res.json(Others);
     } catch (error) {
       console.log(error);
@@ -23,7 +23,7 @@ const SSSOtherController = {
   },
   getById: async (req, res) => {
     try {
-      const Others = await SSSOtherModel.findById(req.params.id);
+      const Others = await OtherModel.findById(req.params.id);
       if (!Others)
         return res.status(404).json({ msg: "Other not found" });
       res.json(Others);
@@ -33,7 +33,7 @@ const SSSOtherController = {
   },
   deleteById: async (req, res) => {
     try {
-      const Others = await SSSOtherModel.findByIdAndDelete(req.params.id);
+      const Others = await OtherModel.findByIdAndDelete(req.params.id);
       if (!Others)
         return res.status(404).json({ msg: "Other not found" });
       res.status(200).json({ Others, msg: "Other deleted with success!" });
@@ -46,7 +46,7 @@ const SSSOtherController = {
       const Other = {
         other: req.body.other,
       };
-      const updatedCash = await SSSOtherModel.findByIdAndUpdate(
+      const updatedCash = await OtherModel.findByIdAndUpdate(
         req.params.id,
         Other
       );
@@ -59,4 +59,4 @@ const SSSOtherController = {
   },
 };
 
-module.exports = SSSOtherController;
+module.exports = OtherController;

@@ -1,9 +1,9 @@
-const { SSSServices : SSSServiceModal } = require("../models/SSSServiceModal");
+const { Services : ServiceModal } = require("../../models/SansetSale/Service");
 
-const SSSServiceController = {
+const ServiceController = {
   create: async (req, res) => {
     try {
-      const sssService = {
+      const Service = {
         name: req.body.name,
         dec: req.body.dec,
         apply: req.body.apply,
@@ -12,7 +12,7 @@ const SSSServiceController = {
        
       };
 
-      const response = await SSSServiceModal.create(sssService);
+      const response = await ServiceModal.create(Service);
       res.status(200).json({ response, msg: "created successfully" });
     } catch (error) {
       console.log(error);
@@ -20,35 +20,35 @@ const SSSServiceController = {
   },
   getAll: async (req, res) => {
     try {
-      const sssServices = await SSSServiceModal.find();
-      res.json(sssServices);
+      const Services = await ServiceModal.find();
+      res.json(Services);
     } catch (error) {
       console.log(error);
     }
   },
   getById: async (req, res) => {
     try {
-      const sssServices = await SSSServiceModal.findById(req.params.id);
-      if (!sssServices)
+      const Services = await ServiceModal.findById(req.params.id);
+      if (!Services)
         return res.status(404).json({ msg: "Service not found" });
-      res.json(sssServices);
+      res.json(Services);
     } catch (error) {
       console.log(error);
     }
   },
   deleteById: async (req, res) => {
     try {
-      const sssServices = await SSSServiceModal.findByIdAndDelete(req.params.id);
-      if (!sssServices)
+      const Services = await ServiceModal.findByIdAndDelete(req.params.id);
+      if (!Services)
         return res.status(404).json({ msg: "Service not found" });
-      res.status(200).json({ sssServices, msg: "Service deleted with success!" });
+      res.status(200).json({ Services, msg: "Service deleted with success!" });
     } catch (error) {
       console.log(error);
     }
   },
   update: async (req, res) => {
     try {
-      const sssService = {
+      const Service = {
         name: req.body.name,
         dec: req.body.dec,
         apply: req.body.apply,
@@ -56,17 +56,17 @@ const SSSServiceController = {
         taxRate: req.body.taxRate,
        
       };
-      const updatedService = await SSSServiceModal.findByIdAndUpdate(
+      const updatedService = await ServiceModal.findByIdAndUpdate(
         req.params.id,
-        sssService
+        Service
       );
       if (!updatedService)
         return res.status(404).json({ msg: "Service not found" });
-      res.status(200).json({ sssService, msg: "Service updated successfully!" });
+      res.status(200).json({ Service, msg: "Service updated successfully!" });
     } catch (error) {
       console.log(error);
     }
   },
 };
 
-module.exports = SSSServiceController;
+module.exports = ServiceController;

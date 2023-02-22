@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 
-const SCUClientFeedSchema = new Schema(
+const ClientFeedSchema = new Schema(
   {
     note: {
       type: String,
@@ -13,8 +13,8 @@ const SCUClientFeedSchema = new Schema(
   
 );
 
-const SCUClientFeed = mongoose.model("SCUClientFeeds", SCUClientFeedSchema);
+const ClientFeed = mongoose.model("ClientFeeds", ClientFeedSchema);
 
 module.exports = {
-    SCUClientFeed,
+    ClientFeed,
 };

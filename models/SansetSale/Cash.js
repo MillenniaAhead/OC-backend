@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 
-const SSSCashSchema = new Schema(
+const CashSchema = new Schema(
   {
     cash: {
       type: Number,
@@ -13,8 +13,8 @@ const SSSCashSchema = new Schema(
   
 );
 
-const SSSCash = mongoose.model("SSSCashs", SSSCashSchema);
+const Cash = mongoose.model("Cashs", CashSchema);
 
 module.exports = {
-    SSSCash,
+    Cash,
 };

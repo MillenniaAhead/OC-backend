@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 
-const SSSServiceSchema = new Schema(
+const ServiceSchema = new Schema(
   {
     name: {
         type: String,
@@ -29,8 +29,8 @@ const SSSServiceSchema = new Schema(
   
 );
 
-const SSSServices = mongoose.model("SSSServices", SSSServiceSchema);
+const Services = mongoose.model("Services", ServiceSchema);
 
 module.exports = {
-    SSSServices,
+    Services,
 };

@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 const { Schema } = mongoose;
 
 
-const SSSOtherSchema = new Schema(
+const OtherSchema = new Schema(
   {
     other: {
       type: String,
@@ -13,8 +13,8 @@ const SSSOtherSchema = new Schema(
   
 );
 
-const SSSOther = mongoose.model("SSSOthers", SSSOtherSchema);
+const Other = mongoose.model("Others", OtherSchema);
 
 module.exports = {
-    SSSOther,
+    Other,
 };
