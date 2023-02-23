@@ -64,4 +64,8 @@ router.use("/", MembershipSoldRouter);
 const RegisterRouter = require("./Register/Register");
 router.use("/", RegisterRouter);
 
+// UserDetail router
+const UserDetailRouter = require("./UserDetail/UserDetail");
+router.use("/", UserDetailRouter);
+
 module.exports = router;
