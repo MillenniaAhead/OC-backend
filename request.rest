@@ -61,3 +61,284 @@ Content-Type: application/json
     }
   ]
 }
+
+###
+POST http://localhost:3000/api/createMemberShipProducts
+Content-Type: application/json
+
+{
+  "name": "sadaf",
+  "description": "sheikh",
+  "sessions": "5",
+  "amount":"560",
+  "terms": "good"
+  
+}
+
+###
+GET http://localhost:3000/api/createMemberShipProducts
+
+###
+GET http://localhost:3000/api/createMemberShipProducts/63b7aafa6d8ce8abd1e8a16c
+
+###
+DELETE http://localhost:3000/api/createMemberShipProducts/63b7aafa6d8ce8abd1e8a16c
+
+###
+PUT http://localhost:3000/api/createMemberShipProducts/63b7aafa6d8ce8abd1e8a16c
+Content-Type: application/json
+
+{
+  "name": "sadaf",
+  "description": "sheikh",
+  "sessions": "5",
+  "amount":"560",
+  "terms": "good"
+  
+}
+
+###
+POST http://localhost:3000/api/addNewProducts
+Content-Type: application/json
+
+{
+  "name": "sadaf",
+  "barcode": "250",
+  "description": "good",
+  "Pdescription":"well"
+  }
+
+
+###
+GET http://localhost:3000/api/addNewProducts
+
+###
+GET http://localhost:3000/api/addNewProducts/63b7aafa6d8ce8abd1e8a16c
+
+###
+DELETE http://localhost:3000/api/addNewProducts/63b7aafa6d8ce8abd1e8a16c
+
+###
+PUT http://localhost:3000/api/addNewProducts/63b7aafa6d8ce8abd1e8a16c
+Content-Type: application/json
+
+{
+  "name": "sadaf",
+  "barcode": "250",
+  "description": "good",
+  "Pdescription":"well"
+  
+}
+
+###
+POST http://localhost:3000/api/voucherLists
+Content-Type: application/json
+
+{
+  "name": "awanish"
+}
+
+###
+GET http://localhost:3000/api/voucherLists
+
+###
+
+GET http://localhost:3000/api/voucherLists/63b7a18ea3ce8fe75a3ef73a
+
+###
+DELETE http://localhost:3000/api/voucherLists/63b7a176a3ce8fe75a3ef734
+
+###
+PUT http://localhost:3000/api/voucherLists/63b7a18ea3ce8fe75a3ef73a
+Content-Type: application/json
+
+{
+  "name": "client"
+}
+
+
+
+###
+POST http://localhost:3000/api/memberShipLists
+Content-Type: application/json
+
+{
+  "name": "awanish"
+}
+
+###
+GET http://localhost:3000/api/memberShipLists
+
+###
+
+GET http://localhost:3000/api/memberShipLists/63b7a18ea3ce8fe75a3ef73a
+
+###
+DELETE http://localhost:3000/api/memberShipLists/63b7a176a3ce8fe75a3ef734
+
+###
+PUT http://localhost:3000/api/memberShipLists/63b7a18ea3ce8fe75a3ef73a
+Content-Type: application/json
+
+{
+  "name": "client"
+}
+
+###
+POST http://localhost:3000/api/voucherSettingLists
+Content-Type: application/json
+
+{
+  "name": "awanish"
+}
+
+###
+GET http://localhost:3000/api/voucherSettingLists
+
+###
+
+GET http://localhost:3000/api/voucherSettingLists/63b7a18ea3ce8fe75a3ef73a
+
+###
+DELETE http://localhost:3000/api/voucherSettingLists/63b7a176a3ce8fe75a3ef734
+
+###
+PUT http://localhost:3000/api/voucherSettingLists/63b7a18ea3ce8fe75a3ef73a
+Content-Type: application/json
+
+{
+  "name": "client"
+}
+
+
+###
+POST http://localhost:3000/api/attractNewClients
+Content-Type: application/json
+
+{
+  "name": "awanish"
+}
+
+###
+GET http://localhost:3000/api/attractNewClients
+
+###
+
+GET http://localhost:3000/api/attractNewClients/63b7a18ea3ce8fe75a3ef73a
+
+###
+DELETE http://localhost:3000/api/attractNewClients/63b7a176a3ce8fe75a3ef734
+
+###
+PUT http://localhost:3000/api/attractNewClients/63b7a18ea3ce8fe75a3ef73a
+Content-Type: application/json
+
+{
+  "name": "client"
+}
+
+###
+POST http://localhost:3000/api/addNewModals
+Content-Type: application/json
+
+{
+  "name": "awanish"
+}
+
+###
+GET http://localhost:3000/api/addNewModals
+
+###
+
+GET http://localhost:3000/api/addNewModals/63b7a18ea3ce8fe75a3ef73a
+
+###
+DELETE http://localhost:3000/api/addNewModals/63b7a176a3ce8fe75a3ef734
+
+###
+PUT http://localhost:3000/api/addNewModals/63b7a18ea3ce8fe75a3ef73a
+Content-Type: application/json
+
+{
+  "name": "client"
+}
+
+
+###
+POST http://localhost:3000/api/addCatMods
+Content-Type: application/json
+
+{
+  "name": "awanish"
+}
+
+###
+GET http://localhost:3000/api/addCatMods
+
+###
+
+GET http://localhost:3000/api/addCatMods/63b7a18ea3ce8fe75a3ef73a
+
+###
+DELETE http://localhost:3000/api/addCatMods/63b7a176a3ce8fe75a3ef734
+
+###
+PUT http://localhost:3000/api/addCatMods/63b7a18ea3ce8fe75a3ef73a
+Content-Type: application/json
+
+{
+  "name": "client"
+}
+
+###
+POST http://localhost:3000/api/categoryMods
+Content-Type: application/json
+
+{
+  "name": "awanish"
+}
+
+###
+GET http://localhost:3000/api/categoryMods
+
+###
+
+GET http://localhost:3000/api/categoryMods/63b7a18ea3ce8fe75a3ef73a
+
+###
+DELETE http://localhost:3000/api/categoryMods/63b7a176a3ce8fe75a3ef734
+
+###
+PUT http://localhost:3000/api/categoryMods/63b7a18ea3ce8fe75a3ef73a
+Content-Type: application/json
+
+{
+  "name": "client"
+}
+
+
+###
+POST http://localhost:3000/api/selectMemberShipModals
+Content-Type: application/json
+
+{
+  "name": "awanish"
+}
+
+###
+GET http://localhost:3000/api/selectMemberShipModals
+
+###
+
+GET http://localhost:3000/api/selectMemberShipModals/63b7a18ea3ce8fe75a3ef73a
+
+###
+DELETE http://localhost:3000/api/selectMemberShipModals/63b7a176a3ce8fe75a3ef734
+
+###
+PUT http://localhost:3000/api/selectMemberShipModals/63b7a18ea3ce8fe75a3ef73a
+Content-Type: application/json
+
+{
+  "name": "client"
+}
