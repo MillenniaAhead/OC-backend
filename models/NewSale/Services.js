@@ -8,7 +8,7 @@ const ServicesSchema = new Schema({
   },
 });
 
-const Services = mongoose.model("Services", ServicesSchema);
+const Services = mongoose.model("Services2", ServicesSchema);
 
 module.exports = {
   Services,
