@@ -5,38 +5,63 @@ const JWT_SECRET = 'OutletControl';
 
 const RegisterController = {
   create: async (req, res) => {
-    let { username, email, password, mobilenumber, country } = req.body
-  const userExist = await RegisterModel.findOne({email})
-  if(userExist){
+
+    let { username, email, password, mobilenumber, country, terms } = req.body
+
+  if(terms){
+    //Is email and username unique  
+    const emailExist = await RegisterModel.findOne({ email })
+    const usernameExist = await RegisterModel.findOne({ username })
+
+  if(emailExist || usernameExist){
       success = false
-      res.send({success, message:"Please provide valid email"})
+      res.send({success, message:"Please provide valid email and username"})
+      
   } else{
       const salt = await bcrypt.genSalt(10);
       password = await bcrypt.hash(password, salt)
-      RegisterModel.create({username, email, password, mobilenumber, country})
-      .then(user => console.log(user))
+      RegisterModel.create({username, email, password, mobilenumber, country, terms})
+      .then(user => {
+        success = true
+      
+      const { password, ...finalUser} = Object.assign({}, user.toJSON());   //remove password from user data
+      
+      const authtoken = jwt.sign(password, JWT_SECRET);  //generate jwt token
+
+      res.status(201).json({success, authtoken, user:finalUser})
+      })
       .catch(err => res.send(err))
-      success = true
-      const authtoken = jwt.sign(password, JWT_SECRET);
-      res.send({success, "authtoken": authtoken})
+
+}
+
+} else {
+  res.status(400).send("You must agree to all terms and conditions")
 }
   },
 
   login: async (req, res) => {
     const { email, password } = req.body
-   const isUser = await RegisterModel.findOne({email})
+
+   const isUser = await RegisterModel.findOne({email}) //check user exist or not
+
    if(isUser){
     const passwordCompare = await bcrypt.compare(password, isUser.password);
+
     if (!passwordCompare) {
         success = false
         res.send({ success, error: "Please try to login with correct credentials" });
     } else {
         success = true
-        const authtoken = jwt.sign(isUser.password, JWT_SECRET);
-        res.send({ success, "authtoken": authtoken });
+
+        const { password, ...finalUser} = Object.assign({}, isUser.toJSON());   //remove password from use
+
+        const authtoken = jwt.sign(isUser.password, JWT_SECRET);  //Generatign jwt token
+
+        res.send({ success, "authtoken": authtoken, user:finalUser });
       }
+
    } else {
-    res.send('invalid email')
+    res.send({success:false, error:'invalid email'})
   }
   },
 

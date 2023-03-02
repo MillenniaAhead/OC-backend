@@ -21,6 +21,10 @@ const RegisterSchema = new Schema({
   country: {
     type: String,
     require: true,
+  },
+  terms:{
+    type:Boolean,
+    require:true
   }
 });
 
