@@ -13,11 +13,15 @@ const ServiceSchema = new Schema(
         require: true,
       },
       apply: {
-        type: Boolean,
+        type: String,
+        require: true,
+      },
+      automatically: {
+        type: String,
         require: true,
       },
       rateType: {
-        type: Boolean,
+        type: Object,
         require: true,
       },
       taxRate: {
